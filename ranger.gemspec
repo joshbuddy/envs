@@ -8,9 +8,9 @@ Gem::Specification.new do |gem|
   gem.version       = Ranger::VERSION
   gem.authors       = ["Josh Hull"]
   gem.email         = ["joshbuddy@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = %q{Sync your .env and .env.default files}
+  gem.summary       = %q{Sync your .env and .env.default files.}
+  gem.homepage      = "https://github.com/joshbuddy/ranger"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
