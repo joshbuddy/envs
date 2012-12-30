@@ -46,7 +46,6 @@ module Ranger
         end
         files.reverse!
       end
-      files.each(&:persist)
       @synced_dirs << dir
     end
   end

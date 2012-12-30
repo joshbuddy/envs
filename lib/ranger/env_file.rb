@@ -8,27 +8,29 @@ module Ranger
     end
 
     def parse
+      new_hash = {}
       File.open(@path).each_line do |line|
         case line
         when /^\s*$/, /^#/ # ignore
         else
           line.chomp
           key, value = line.split('=', 2)
-          self[key] = value.strip
+          new_hash[key] = value.strip
         end
+      end
+      update(new_hash)
+    end
+
+    def []=(key, value)
+      super(key, value)
+      File.open(@path, "a") do |f|
+        f << "#{key}=#{value}\n"
       end
     end
 
+    private
     def exist?
       File.exist?(@path)
-    end
-
-    def persist
-      File.open(@path, 'w') do |f|
-        each do |key, val|
-          f.puts "#{key}=#{val}"
-        end
-      end
     end
   end
 end
