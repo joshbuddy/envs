@@ -1,5 +1,0 @@
-#!/usr/bin/env ruby
-
-require 'ranger'
-
-Ranger::CLI.run

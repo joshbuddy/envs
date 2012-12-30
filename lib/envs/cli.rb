@@ -1,6 +1,6 @@
 require 'trollop'
 
-module Ranger
+module Envs
   class CLI
     def self.run
       new.run
@@ -12,7 +12,7 @@ module Ranger
         opt :no_color, "Don't be colorized", :short => "-c"
         opt :root, "Project root directory", :short => "-r", :default => Dir.pwd
       end
-      runner = Ranger::Runner.new(global_opts)
+      runner = Runner.new(global_opts)
       runner.run
     end
   end

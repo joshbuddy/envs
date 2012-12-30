@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in ranger.gemspec
+# Specify your gem's dependencies in envs.gemspec
 gemspec

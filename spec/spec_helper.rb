@@ -1,19 +1,19 @@
 $: << File.expand_path("../../lib", __FILE__)
 
-require 'ranger'
+require 'envs'
 require 'minitest/autorun'
 
 class MiniTest::Spec
 
   def clear_project
-    FileUtils.rm_rf("/tmp/ranger-test")
-    FileUtils.mkdir_p("/tmp/ranger-test")
+    FileUtils.rm_rf("/tmp/envs-test")
+    FileUtils.mkdir_p("/tmp/envs-test")
   end
 
-  def run_ranger(*args)
-    args.concat %w(-r /tmp/ranger-test)
+  def run_envs(*args)
+    args.concat %w(-r /tmp/envs-test)
     ARGV.replace(args)
-    pid = fork { Ranger::CLI.run }
+    pid = fork { Envs::CLI.run }
     _, status = Process.waitpid2(pid)
     status
   end
@@ -37,19 +37,19 @@ class MiniTest::Spec
   end
 
   def env_result
-    parse_env_file("/tmp/ranger-test/.env")
+    parse_env_file("/tmp/envs-test/.env")
   end
 
   def default_result
-    parse_env_file("/tmp/ranger-test/.env.default")
+    parse_env_file("/tmp/envs-test/.env.default")
   end
 
   def env(vals)
-    add_vals("/tmp/ranger-test/.env", vals)
+    add_vals("/tmp/envs-test/.env", vals)
   end
 
   def default(vals)
-    add_vals("/tmp/ranger-test/.env.default", vals)
+    add_vals("/tmp/envs-test/.env.default", vals)
   end
 
   private

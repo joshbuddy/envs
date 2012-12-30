@@ -1,4 +1,4 @@
-module Ranger
+module Envs
   class EnvFile < Hash
     attr_reader :path
 

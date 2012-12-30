@@ -1,7 +1,5 @@
-require "ranger/version"
-require "ranger/runner"
-require "ranger/env_file"
-require "ranger/cli"
+require "envs/version"
+require "envs/runner"
+require "envs/env_file"
+require "envs/cli"
 
-module Ranger
-end

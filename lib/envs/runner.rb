@@ -1,6 +1,6 @@
 require 'rainbow'
 
-module Ranger
+module Envs
   class Runner
     def initialize(opts)
       @root = opts[:root]
@@ -10,7 +10,7 @@ module Ranger
     end
 
     def run
-      puts "Ranger! #{VERSION}"
+      puts "Envs! #{VERSION}"
 
       gitignore = File.join(@root, ".gitignore")
       if File.exist?(gitignore)

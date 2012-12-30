@@ -1,16 +1,16 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'ranger/version'
+require 'envs/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "ranger"
-  gem.version       = Ranger::VERSION
+  gem.name          = "envs"
+  gem.version       = Envs::VERSION
   gem.authors       = ["Josh Hull"]
   gem.email         = ["joshbuddy@gmail.com"]
   gem.description   = %q{Sync your .env and .env.default files}
   gem.summary       = %q{Sync your .env and .env.default files.}
-  gem.homepage      = "https://github.com/joshbuddy/ranger"
+  gem.homepage      = "https://github.com/joshbuddy/envs"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

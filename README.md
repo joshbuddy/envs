@@ -1,4 +1,4 @@
-# Ranger
+# Envs
 
 Sync up values from your `.env` and `.env.default` files.
 
@@ -6,11 +6,11 @@ Sync up values from your `.env` and `.env.default` files.
 
 Install it using ... 
 
-    $ gem install ranger
+    $ gem install envs
 
 ## Usage
 
-Try running `ranger` in your project root. This will traverse your entire project and find any `.env` files or `.env.default` files and make sure they have the same values in them.
+Try running `envs` in your project root. This will traverse your entire project and find any `.env` files or `.env.default` files and make sure they have the same values in them.
 
 ## Contributing
 
